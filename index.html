@@ -150,10 +150,10 @@ input,select,textarea{font-family:inherit;outline:none}
 /* FOOTER */
 .footer-note{text-align:center;color:#374151;font-size:11px;padding:24px 0}
 </style>
-<link rel="manifest" href="/trading-academy/manifest.json">
+<link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#2D6A4F">
-<link rel="icon" href="/trading-academy/icons/icon-192.png">
-<link rel="apple-touch-icon" href="/trading-academy/icons/icon-192.png">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
 </head>
 <body>
 
@@ -290,7 +290,7 @@ input,select,textarea{font-family:inherit;outline:none}
         </div>
       </div>
     </div>
-    <div class="footer-note">© 2024 Smarter Hustle Academy™ · Educational Purposes Only</div>
+    <div class="footer-note">© 2026 Smarter Hustle Academy™ · Educational Purposes Only</div>
   </div>
 </div>
 
@@ -528,7 +528,7 @@ input,select,textarea{font-family:inherit;outline:none}
       <div style="font-weight:800;color:var(--green);font-size:18px">You are ready to go live!</div>
       <div style="color:#a7f3d0;font-size:14px;margin-top:6px">Start with 10-20% of your calculated position sizes. Grow slowly.</div>
     </div>
-    <div class="footer-note">© 2024 Smarter Hustle Academy™ · Educational Purposes Only</div>
+    <div class="footer-note">© 2026 Smarter Hustle Academy™ · Educational Purposes Only</div>
   </div>
 </div>
 
@@ -599,9 +599,19 @@ var goLiveItems = [
 ];
 
 // ── STATE ─────────────────────────────────────────────────────
-var completedLessons = {};
-var goLiveChecked = [];
-var trades = [];
+function loadState(key, fallback) {
+  try {
+    var raw = localStorage.getItem('sha_trading_' + key);
+    return raw ? JSON.parse(raw) : fallback;
+  } catch(e) { return fallback; }
+}
+function saveState(key, value) {
+  try { localStorage.setItem('sha_trading_' + key, JSON.stringify(value)); }
+  catch(e) { /* storage unavailable — fail silently, state stays in-memory */ }
+}
+var completedLessons = loadState('completedLessons', {});
+var goLiveChecked = loadState('goLiveChecked', []);
+var trades = loadState('trades', []);
 
 // ── NAV ───────────────────────────────────────────────────────
 function showPage(id) {
@@ -649,7 +659,7 @@ function renderLessons(weekKey, containerId) {
     html += '<div style="background:#111;border-radius:10px;padding:14px;margin-bottom:12px">';
     html += '<div style="color:#60a5fa;font-weight:700;margin-bottom:8px;font-size:14px">📹 Resources</div>';
     lesson.videos.forEach(function(v){
-      html += '<div class="video-link"><span>▶</span><span>'+v+'</span></div>';
+      html += '<a class="video-link" href="https://www.youtube.com/results?search_query='+encodeURIComponent(v)+'" target="_blank" rel="noopener"><span>▶</span><span>'+v+'</span></a>';
     });
     html += '</div>';
 
@@ -671,6 +681,7 @@ function toggleLesson(id) {
 
 function toggleComplete(id) {
   completedLessons[id] = !completedLessons[id];
+  saveState('completedLessons', completedLessons);
   var numEl = document.getElementById('lnum-'+id);
   var btnEl = document.getElementById('cbtn-'+id);
   var liEl = document.getElementById('li-'+id);
@@ -776,6 +787,7 @@ function addTrade() {
   };
 
   trades.push(trade);
+  saveState('trades', trades);
   clearJournalForm();
   renderJournal();
   updateDashboard();
@@ -783,6 +795,7 @@ function addTrade() {
 
 function deleteTrade(id) {
   trades = trades.filter(function(t){ return t.id !== id; });
+  saveState('trades', trades);
   renderJournal();
   updateDashboard();
 }
@@ -872,6 +885,7 @@ function toggleGoLive(idx) {
   var pos = goLiveChecked.indexOf(idx);
   if(pos === -1) goLiveChecked.push(idx);
   else goLiveChecked.splice(pos, 1);
+  saveState('goLiveChecked', goLiveChecked);
   renderGoLive();
 }
 
@@ -904,7 +918,7 @@ window.addEventListener('load', function(){
 <script>
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/trading-academy/sw.js')
+      navigator.serviceWorker.register('sw.js')
         .then(reg => console.log('Service worker registered:', reg.scope))
         .catch(err => console.log('Service worker registration failed:', err));
     });
