@@ -142,6 +142,27 @@ input,select,textarea{font-family:inherit;outline:none}
 .video-link{display:flex;align-items:center;gap:8px;padding:10px 0;border-bottom:1px solid #1a2a1e;font-size:13px;color:#93c5fd}
 .video-link:last-child{border-bottom:none}
 
+/* ILLUSTRATION (native animated visual, replaces outbound video links) */
+.illus-box{background:#0a1410;border:1px solid #2d4a35;border-radius:10px;padding:16px;margin-bottom:12px}
+.illus-title{color:#60a5fa;font-weight:700;margin-bottom:10px;font-size:14px}
+.illus-caption{font-size:12px;color:#8a9080;margin-top:10px;line-height:1.6;text-align:center}
+
+/* QUIZ */
+.quiz-box{background:#1a1500;border:1px solid var(--go);border-radius:10px;padding:16px;margin:12px 0}
+.quiz-title{color:var(--go);font-weight:700;margin-bottom:12px;font-size:14px}
+.quiz-q{margin-bottom:16px}
+.quiz-q-text{font-size:14px;color:#f9fafb;font-weight:600;margin-bottom:8px;line-height:1.55}
+.quiz-opt{display:flex;align-items:flex-start;gap:9px;padding:9px 10px;border-radius:8px;margin-bottom:6px;border:1px solid #3a3220;cursor:pointer;transition:.15s}
+.quiz-opt:hover{border-color:var(--go)}
+.quiz-opt input{margin-top:3px;flex-shrink:0}
+.quiz-opt span{font-size:13px;color:#e5e7eb;line-height:1.55}
+.quiz-opt.correct{border-color:var(--green);background:rgba(16,185,129,.1)}
+.quiz-opt.incorrect{border-color:var(--red);background:rgba(239,68,68,.1)}
+.quiz-explain{font-size:12.5px;color:#a7f3d0;background:rgba(16,185,129,.08);border-radius:6px;padding:8px 10px;margin-top:6px;display:none;line-height:1.6}
+.quiz-explain.show{display:block}
+.quiz-score{text-align:center;font-size:15px;font-weight:700;color:var(--go);padding:12px;margin-top:6px;display:none}
+.quiz-score.show{display:block}
+
 /* CHECKLIST PAGE */
 .go-live-item{display:flex;align-items:center;gap:12px;padding:14px 16px;background:#1a2a1e;border:1px solid #2d4a35;border-radius:12px;margin-bottom:8px;cursor:pointer;transition:.2s}
 .go-live-item:hover{border-color:var(--g)}
@@ -541,7 +562,14 @@ var curriculum = {
     {id:3,title:"Trading Psychology",tag:"Mindset",points:["The 90-90-90 Rule: 90% of traders lose 90% of their money in 90 days.","FOMO causes impulsive entries — the market's most expensive emotion.","Revenge trading: losing → emotional trade to recover → bigger loss. Never do this.","Loss aversion: humans feel losses 2× more than equivalent gains.","Solution: Pre-plan every trade. Rules over feelings. Always."],practice:"Write in a journal: (1) Why do you want to trade? (2) What is your realistic monthly goal? (3) How will you react to 5 losses in a row? (4) What are YOUR emotional triggers?",videos:["Trading in the Zone Summary — Mark Douglas","Why Traders Fail — SMB Capital"]},
     {id:4,title:"Risk Management — The 1-2% Rule",tag:"Critical Skill",points:["The Rule: Never risk more than 1-2% of your account on any single trade.","Formula: Position Size = (Account × Risk%) ÷ (Entry − Stop Loss)","Example: $10,000 × 1% = $100 max loss. Entry $150, Stop $148 = $2 risk. Buy 50 shares.","Risk-Reward minimum: 1:2. Risk $100 to make $200. Profitable at 40% win rate.","Hard stops only. Mental stops don't work. Use the calculator on every trade."],practice:"Use the Calculator tab. Calculate position sizes for 10 different scenarios. Vary account size, risk %, and stop distances.",videos:["Position Sizing Explained — Rayner Teo","Risk Management Rules — SMB Capital"]},
     {id:5,title:"Chart Types & Timeframes",tag:"Technical Basics",points:["Line chart: closes only. Good for macro trend view.","Bar (OHLC) chart: open, high, low, close. More data than line.","Candlestick chart: most popular. Visual, intuitive, shows sentiment.","Day traders: 1-min, 5-min, 15-min. Swing traders: 1-hr, 4-hr, daily.","Multi-timeframe rule: Higher TF = trend. Entry TF = setup. Lower TF = precise entry."],practice:"On TradingView: open SPY. Switch between 5-min, 15-min, 1-hr, daily, weekly. Write: Is the trend the same on all timeframes? Where do they conflict?",videos:["Chart Types Explained — Investopedia Academy","Multi-Timeframe Analysis — Rayner Teo"]},
-    {id:6,title:"Candlestick Patterns Part 1",tag:"Pattern Recognition",points:["Doji: Open ≈ Close. Long wicks both sides. Indecision — potential reversal.","Hammer: Small body at top, long lower wick. Buyers rejected sellers. Bullish at bottom.","Shooting Star: Small body at bottom, long upper wick. Sellers rejected buyers. Bearish at top.","Marubozu: Full body, no wicks. Complete domination by buyers (green) or sellers (red).","CONTEXT IS EVERYTHING. A hammer at support = powerful. A hammer mid-chart = meaningless."],practice:"Open historical chart of AAPL (6-month daily). Identify 10 hammers, 5 shooting stars, 5 dojis. Mark them. Write what happened in the next 3 candles each time.",videos:["Candlestick Patterns — Steve Nison","Candlestick Mastery — Rayner Teo"]},
+    {id:6,title:"Candlestick Patterns Part 1",tag:"Pattern Recognition",points:["Doji: Open ≈ Close. Long wicks both sides. Indecision — potential reversal.","Hammer: Small body at top, long lower wick. Buyers rejected sellers. Bullish at bottom.","Shooting Star: Small body at bottom, long upper wick. Sellers rejected buyers. Bearish at top.","Marubozu: Full body, no wicks. Complete domination by buyers (green) or sellers (red).","CONTEXT IS EVERYTHING. A hammer at support = powerful. A hammer mid-chart = meaningless."],practice:"Open historical chart of AAPL (6-month daily). Identify 10 hammers, 5 shooting stars, 5 dojis. Mark them. Write what happened in the next 3 candles each time.",videos:[],illustration:'<svg viewBox="0 0 680 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block"><g><line x1="90" y1="118" x2="90" y2="50" stroke="#9ca3af" stroke-width="2.5" opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.0s" fill="freeze"/></line><line x1="90" y1="122" x2="90" y2="190" stroke="#9ca3af" stroke-width="2.5" opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.35s" fill="freeze"/></line><rect x="71" y="118" width="38" height="4" rx="3" fill="#9ca3af" opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.15s" fill="freeze"/></rect><text x="90" y="215" text-anchor="middle" fill="#f9fafb" font-size="13" font-weight="700" font-family="-apple-system,Arial,sans-serif" opacity="0">Doji<animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.7s" fill="freeze"/></text><text x="90" y="233" text-anchor="middle" fill="#8a9080" font-size="11" font-family="-apple-system,Arial,sans-serif" opacity="0">Open ≈ Close<animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.7s" fill="freeze"/></text></g><g><line x1="255" y1="68" x2="255" y2="58" stroke="#10b981" stroke-width="2.5" opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.35s" fill="freeze"/></line><line x1="255" y1="100" x2="255" y2="190" stroke="#10b981" stroke-width="2.5" opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.7s" fill="freeze"/></line><rect x="236" y="68" width="38" height="32" rx="3" fill="#10b981" opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.5s" fill="freeze"/></rect><text x="255" y="215" text-anchor="middle" fill="#f9fafb" font-size="13" font-weight="700" font-family="-apple-system,Arial,sans-serif" opacity="0">Hammer<animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="1.0499999999999998s" fill="freeze"/></text><text x="255" y="233" text-anchor="middle" fill="#8a9080" font-size="11" font-family="-apple-system,Arial,sans-serif" opacity="0">Bullish at bottom<animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="1.0499999999999998s" fill="freeze"/></text></g><g><line x1="420" y1="140" x2="420" y2="50" stroke="#ef4444" stroke-width="2.5" opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.7s" fill="freeze"/></line><line x1="420" y1="172" x2="420" y2="182" stroke="#ef4444" stroke-width="2.5" opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="1.0499999999999998s" fill="freeze"/></line><rect x="401" y="140" width="38" height="32" rx="3" fill="#ef4444" opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="0.85s" fill="freeze"/></rect><text x="420" y="215" text-anchor="middle" fill="#f9fafb" font-size="13" font-weight="700" font-family="-apple-system,Arial,sans-serif" opacity="0">Shooting Star<animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="1.4s" fill="freeze"/></text><text x="420" y="233" text-anchor="middle" fill="#8a9080" font-size="11" font-family="-apple-system,Arial,sans-serif" opacity="0">Bearish at top<animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="1.4s" fill="freeze"/></text></g><g><rect x="566" y="50" width="38" height="140" rx="3" fill="#10b981" opacity="0"><animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="1.1999999999999997s" fill="freeze"/></rect><text x="585" y="215" text-anchor="middle" fill="#f9fafb" font-size="13" font-weight="700" font-family="-apple-system,Arial,sans-serif" opacity="0">Marubozu<animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="1.7499999999999998s" fill="freeze"/></text><text x="585" y="233" text-anchor="middle" fill="#8a9080" font-size="11" font-family="-apple-system,Arial,sans-serif" opacity="0">Full domination<animate attributeName="opacity" from="0" to="1" dur="0.5s" begin="1.7499999999999998s" fill="freeze"/></text></g></svg>',quiz:[
+      {q:"Which pattern has open approximately equal to close, with long wicks on both sides?",options:["Doji","Hammer","Marubozu","Shooting Star"],correct:0,explain:"A Doji forms when the open and close are nearly identical, producing a very small body with wicks extending both above and below — it signals indecision, often near potential reversals."},
+      {q:"A Hammer forming at the bottom of a downtrend (small body near the top, long lower wick) is generally read as:",options:["A bullish signal","A bearish signal","Meaningless noise","A reason to average down blindly"],correct:0,explain:"A Hammer shows buyers rejected lower prices and pushed the close back up — that's why it's read as bullish, specifically when it forms at support at the bottom of a move."},
+      {q:"A Shooting Star (small body near the bottom, long upper wick) appearing at the top of an uptrend most often signals:",options:["Continued buying strength","A bearish reversal","A Doji forming","Nothing without other context"],correct:1,explain:"The long upper wick shows sellers rejected higher prices near resistance — the mirror image of a Hammer, and a common bearish reversal warning at the top of a move."},
+      {q:"A Marubozu candle with a full body and no wicks on either side shows:",options:["Buyers and sellers fought to a draw","Complete domination by one side","The market was closed","A false signal, always"],correct:1,explain:"No wicks means price opened and ran in one direction the entire session with essentially no pushback — full conviction from either buyers (green) or sellers (red)."},
+      {q:"True or False: A Hammer is a powerful signal no matter where it appears on the chart.",options:["True — it's always bullish regardless of location","False — context matters, like whether it's at a real support level"],correct:1,explain:"As the lesson points out: context is everything. A hammer at a genuine support level is powerful. The same shape appearing randomly mid-chart with no support nearby means far less."}
+    ]
+},
     {id:7,title:"Week 1 Assessment",tag:"Assessment",points:["Can you explain all 3 market types without notes?","Do you have 2+ demo accounts active with paper trades?","Can you calculate position size in under 60 seconds?","Have you identified 5+ candlestick patterns on real charts?","Have you written your trading psychology journal?"],practice:"Self-quiz: Write the position size formula, name 4 candlestick patterns, name 3 brokers, define risk-reward ratio. Grade yourself. Re-read anything below 80%.",videos:["Week 1 Recap — review your notes from each day"]}
   ],
   w2:[
@@ -655,13 +683,29 @@ function renderLessons(weekKey, containerId) {
     html += '<div class="practice-text">'+lesson.practice+'</div>';
     html += '</div>';
 
-    // Videos
-    html += '<div style="background:#111;border-radius:10px;padding:14px;margin-bottom:12px">';
-    html += '<div style="color:#60a5fa;font-weight:700;margin-bottom:8px;font-size:14px">📹 Resources</div>';
-    lesson.videos.forEach(function(v){
-      html += '<a class="video-link" href="https://www.youtube.com/results?search_query='+encodeURIComponent(v)+'" target="_blank" rel="noopener"><span>▶</span><span>'+v+'</span></a>';
-    });
-    html += '</div>';
+    // Illustration (native animated visual — only renders if lesson.illustration is set)
+    if(lesson.illustration) {
+      html += '<div class="illus-box">';
+      html += '<div class="illus-title">🎬 Visual Walkthrough</div>';
+      html += lesson.illustration;
+      html += '</div>';
+    }
+
+    // Videos (outbound resources — only renders if lesson has videos; lessons with a
+    // native illustration instead can omit this or leave the array empty)
+    if(lesson.videos && lesson.videos.length) {
+      html += '<div style="background:#111;border-radius:10px;padding:14px;margin-bottom:12px">';
+      html += '<div style="color:#60a5fa;font-weight:700;margin-bottom:8px;font-size:14px">📹 Resources</div>';
+      lesson.videos.forEach(function(v){
+        html += '<a class="video-link" href="https://www.youtube.com/results?search_query='+encodeURIComponent(v)+'" target="_blank" rel="noopener"><span>▶</span><span>'+v+'</span></a>';
+      });
+      html += '</div>';
+    }
+
+    // Quiz (interactive multiple-choice — only renders if lesson.quiz is set)
+    if(lesson.quiz) {
+      html += renderQuizHTML(lesson.id, lesson.quiz);
+    }
 
     // Complete Button
     html += '<button onclick="toggleComplete('+lesson.id+')" id="cbtn-'+lesson.id+'" style="width:100%;padding:14px;border-radius:12px;font-size:15px;font-weight:700;color:#fff;background:'+(done?'#374151':'var(--g)')+'">';
@@ -677,6 +721,66 @@ function toggleLesson(id) {
   var body = document.getElementById('lb-'+id);
   if(!body) return;
   body.classList.toggle('open');
+}
+
+// ── QUIZ (interactive multiple-choice) ───────────────────────
+var quizScores = loadState('quizScores', {});
+
+function renderQuizHTML(lessonId, quiz) {
+  var savedScore = quizScores[lessonId];
+  var html = '<div class="quiz-box" id="quiz-'+lessonId+'">';
+  html += '<div class="quiz-title">🧠 Knowledge Check' + (savedScore !== undefined ? ' — last score: '+savedScore+'/'+quiz.length : '') + '</div>';
+  quiz.forEach(function(q, qi) {
+    html += '<div class="quiz-q" id="quiz-'+lessonId+'-q'+qi+'">';
+    html += '<div class="quiz-q-text">'+(qi+1)+'. '+q.q+'</div>';
+    q.options.forEach(function(opt, oi) {
+      html += '<label class="quiz-opt" id="quiz-'+lessonId+'-q'+qi+'-o'+oi+'">';
+      html += '<input type="radio" name="quiz-'+lessonId+'-q'+qi+'" value="'+oi+'">';
+      html += '<span>'+opt+'</span>';
+      html += '</label>';
+    });
+    html += '<div class="quiz-explain" id="quiz-'+lessonId+'-q'+qi+'-explain">'+q.explain+'</div>';
+    html += '</div>';
+  });
+  html += '<button class="btn btn-gold" style="width:100%" onclick="checkQuiz('+lessonId+')">Check My Answers</button>';
+  html += '<div class="quiz-score" id="quiz-'+lessonId+'-score"></div>';
+  html += '</div>';
+  return html;
+}
+
+function checkQuiz(lessonId) {
+  var lesson = null;
+  Object.keys(curriculum).some(function(wk){
+    var found = curriculum[wk].find(function(l){ return l.id === lessonId; });
+    if(found) { lesson = found; return true; }
+    return false;
+  });
+  if(!lesson || !lesson.quiz) return;
+
+  var correctCount = 0;
+  lesson.quiz.forEach(function(q, qi) {
+    var selected = document.querySelector('input[name="quiz-'+lessonId+'-q'+qi+'"]:checked');
+    var explainEl = document.getElementById('quiz-'+lessonId+'-q'+qi+'-explain');
+    q.options.forEach(function(opt, oi) {
+      var optEl = document.getElementById('quiz-'+lessonId+'-q'+qi+'-o'+oi);
+      optEl.classList.remove('correct','incorrect');
+      if(oi === q.correct) optEl.classList.add('correct');
+      else if(selected && parseInt(selected.value,10) === oi) optEl.classList.add('incorrect');
+    });
+    if(explainEl) explainEl.classList.add('show');
+    if(selected && parseInt(selected.value,10) === q.correct) correctCount++;
+  });
+
+  quizScores[lessonId] = correctCount;
+  saveState('quizScores', quizScores);
+
+  var scoreEl = document.getElementById('quiz-'+lessonId+'-score');
+  if(scoreEl) {
+    scoreEl.textContent = correctCount === lesson.quiz.length
+      ? '🎉 Perfect score: '+correctCount+'/'+lesson.quiz.length
+      : correctCount+'/'+lesson.quiz.length+' correct — review the highlighted explanations above and try again anytime.';
+    scoreEl.classList.add('show');
+  }
 }
 
 function toggleComplete(id) {
