@@ -170,6 +170,37 @@ input,select,textarea{font-family:inherit;outline:none}
 
 /* FOOTER */
 .footer-note{text-align:center;color:#374151;font-size:11px;padding:24px 0}
+
+/* ── EXPANDED INVESTING LAB ───────────────────────────────────── */
+.lab-tabs{display:flex;gap:8px;overflow-x:auto;margin:0 0 18px;padding-bottom:3px}
+.lab-tab{background:#16241d;border:1px solid #2d4a35;color:#9ca3af;border-radius:999px;padding:9px 14px;font-size:13px;font-weight:700;white-space:nowrap}
+.lab-tab.active,.lab-tab:hover{background:var(--g);color:#fff;border-color:var(--g)}
+.lab-panel{display:none}.lab-panel.active{display:block;animation:fadeIn .25s ease}
+.range-row{display:grid;grid-template-columns:1fr 86px;align-items:center;gap:12px;margin:14px 0}
+.range-row input[type=range]{width:100%;accent-color:var(--green)}
+.range-value{background:#2a2a2a;border:1px solid #3a4a35;border-radius:8px;color:var(--go);padding:8px;text-align:center;font-weight:800}
+.context-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.context-card{background:rgba(255,255,255,.04);border:1px solid #2d4a35;border-radius:12px;padding:14px}
+.context-card h4{color:var(--go);font-size:14px;margin-bottom:6px}.context-card p{font-size:13px;color:#cbd5d1;line-height:1.65}
+.meter{height:10px;background:#2a2a2a;border-radius:99px;overflow:hidden;margin-top:8px}.meter-fill{height:100%;border-radius:99px;transition:width .35s ease}
+.sim-table{width:100%;border-collapse:collapse;font-size:13px}.sim-table th,.sim-table td{padding:10px;border-bottom:1px solid #2d4a35;text-align:right}.sim-table th:first-child,.sim-table td:first-child{text-align:left}.sim-table th{color:#8a9080;font-weight:600}.sim-table td{color:#e5e7eb}.positive{color:var(--green)!important}.negative{color:#fca5a5!important}
+.chart-wrap{background:#0a1410;border:1px solid #2d4a35;border-radius:10px;padding:10px;margin-top:14px}.chart-wrap canvas{width:100%;height:210px;display:block}
+@media(max-width:700px){.context-grid{grid-template-columns:1fr}.range-row{grid-template-columns:1fr 76px}}
+
+/* ── PORTFOLIO PLANNER & UNIVERSAL QUIZZES ───────────────────── */
+.portfolio-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.portfolio-grid .full{grid-column:1/-1}
+.question-card{background:#111d16;border:1px solid #2d4a35;border-radius:12px;padding:16px;margin-bottom:12px}
+.question-card legend{font-weight:700;color:#fff;margin-bottom:10px;line-height:1.5}.question-card label{display:flex;gap:9px;align-items:flex-start;padding:9px;border:1px solid #2d4a35;border-radius:8px;margin-top:7px;color:#d1d5db;font-size:13px;cursor:pointer}.question-card label:hover{border-color:var(--green);background:rgba(16,185,129,.06)}
+.profile-result{display:none;background:#0d2b1e;border:2px solid var(--green);border-radius:12px;padding:18px;margin-top:14px}.profile-result.show{display:block;animation:fadeIn .25s ease}
+.alloc-row{display:grid;grid-template-columns:1.25fr .7fr .8fr .9fr;align-items:center;gap:8px;border-bottom:1px solid #2d4a35;padding:10px 0;font-size:13px}.alloc-row:last-child{border-bottom:none}.alloc-head{color:#8a9080;font-size:11px;text-transform:uppercase;letter-spacing:.5px}.alloc-input{width:100%;background:#2a2a2a;border:1px solid #3a4a35;border-radius:8px;color:#fff;padding:8px;font-weight:700}.drift-pill{display:inline-block;padding:3px 8px;border-radius:99px;font-size:11px;font-weight:700}.drift-ok{background:#0d2b1e;color:var(--green)}.drift-warn{background:#2d0d0d;color:#fca5a5}.section-quiz{border-color:#60a5fa;background:#0a1628}.section-quiz .quiz-title{color:#93c5fd}.section-quiz .quiz-opt{border-color:#263b5c}.quiz-progress{font-size:12px;color:#8a9080;margin:5px 0 12px}
+@media(max-width:700px){.portfolio-grid{grid-template-columns:1fr}.alloc-row{grid-template-columns:1.1fr .75fr .8fr .8fr;font-size:12px}}
+
+/* ── FULL ACADEMY ENHANCEMENTS ───────────────────────────────── */
+:focus-visible{outline:3px solid var(--go);outline-offset:3px}.nav{box-shadow:0 4px 18px rgba(0,0,0,.28)}.card,.stat,.lesson-item,.context-card,.question-card{box-shadow:0 3px 14px rgba(0,0,0,.12)}
+.lesson-body{scroll-margin-top:72px}.quiz-box{position:relative}.quiz-box:before{content:'SECTION CHECKPOINT';display:block;color:#60a5fa;font-size:10px;letter-spacing:1.4px;font-weight:800;margin-bottom:5px}.quiz-score.show{background:rgba(212,160,23,.08);border-radius:8px}.dashboard-learning{display:grid;grid-template-columns:1.2fr .8fr;gap:14px}.mini-progress{background:#2a2a2a;height:8px;border-radius:99px;overflow:hidden}.mini-progress span{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--green));border-radius:99px}
+.alloc-tools{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.allocation-chart{display:grid;grid-template-columns:220px 1fr;gap:16px;align-items:center;margin-top:14px}.allocation-chart canvas{width:220px;height:220px;background:#0a1410;border-radius:50%;border:1px solid #2d4a35}.chart-legend{display:grid;gap:8px}.legend-row{display:flex;justify-content:space-between;gap:12px;font-size:13px;padding:8px 10px;border-radius:8px;background:rgba(255,255,255,.04)}.legend-dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:7px}.saved-plans{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:12px}.saved-plans select{max-width:240px;background:#2a2a2a;border:1px solid #3a4a35;color:#fff;border-radius:8px;padding:9px}
+.scenario-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.scenario-card{border:1px solid #2d4a35;border-radius:12px;padding:14px;background:#111d16}.scenario-card.active{border-color:var(--go);box-shadow:0 0 0 2px rgba(212,160,23,.2)}.scenario-card h4{font-size:15px;color:var(--go);margin-bottom:5px}.scenario-card p{font-size:12px;color:#cbd5d1;line-height:1.6}.scenario-card button{width:100%;margin-top:10px}.scenario-output{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:14px}.scenario-output .stat-val{font-size:25px}
+@media(max-width:700px){.dashboard-learning,.allocation-chart{grid-template-columns:1fr}.allocation-chart canvas{margin:auto}.scenario-grid,.scenario-output{grid-template-columns:1fr 1fr}}@media(max-width:460px){.scenario-grid,.scenario-output{grid-template-columns:1fr}}
 </style>
 <link rel="manifest" href="manifest.json">
 <meta name="theme-color" content="#2D6A4F">
@@ -192,6 +223,7 @@ input,select,textarea{font-family:inherit;outline:none}
     <button class="nav-tab" onclick="showPage('week4')">Week 4</button>
     <button class="nav-tab" onclick="showPage('aimodule')">🤖 AI Module</button>
     <button class="nav-tab" onclick="showPage('calculator')">🧮 Calculator</button>
+    <button class="nav-tab" onclick="showPage('investing')">📈 Investing Lab</button>
     <button class="nav-tab" onclick="showPage('journal')">📝 Journal</button>
     <button class="nav-tab" onclick="showPage('checklist')">✅ Go-Live</button>
   </div>
@@ -220,6 +252,7 @@ input,select,textarea{font-family:inherit;outline:none}
       </div>
     </div>
 
+    <div class="dashboard-learning" style="margin-bottom:20px"><div class="card card-blue"><div style="font-weight:800;color:#fff;margin-bottom:6px">Learning checkpoint progress</div><div style="font-size:13px;color:#cbd5d1;line-height:1.65">Complete the multiple-choice checkpoint inside each lesson. Your results are saved locally so you can review weak areas without losing your place.</div><div class="mini-progress" style="margin-top:12px"><span id="quiz-progress-bar" style="width:0%"></span></div><div style="display:flex;justify-content:space-between;margin-top:8px;font-size:12px;color:#8a9080"><span id="quiz-progress-text">0 / 36 scored</span><span id="quiz-average">0% average</span></div></div><div class="card"><div style="font-weight:800;color:#fff;margin-bottom:6px">Study workflow</div><div style="font-size:13px;color:#cbd5d1;line-height:1.65">Read the key points, do the practice, take the quiz, then mark the lesson complete. A score below 80% is a signal to revisit the explanation—not a reason to rush.</div><button class="btn btn-outline btn-sm" style="margin-top:12px" onclick="showPage('week1')">Review lessons</button></div></div>
     <div class="grid-4" style="margin-bottom:20px">
       <div class="stat"><div class="stat-val">36</div><div class="stat-label">Total Lessons</div></div>
       <div class="stat"><div class="stat-val" id="dash-completed">0</div><div class="stat-label">Completed</div></div>
@@ -438,6 +471,99 @@ input,select,textarea{font-family:inherit;outline:none}
         • Hard stops only — mental stops don't work
       </div>
     </div>
+  </div>
+</div>
+
+
+<!-- INVESTING LAB -->
+<div id="investing" class="page">
+  <div style="background:linear-gradient(135deg,#0f766e,#164e63);padding:24px 20px">
+    <button onclick="showPage('dashboard')" style="background:none;color:rgba(255,255,255,.7);font-size:14px;margin-bottom:12px">← Dashboard</button>
+    <div style="font-size:11px;font-weight:700;letter-spacing:2px;color:rgba(255,255,255,.7)">INVESTING LAB</div>
+    <div style="font-size:26px;font-weight:800;color:#fff;margin-top:4px">Build Wealth, Then Stress-Test It</div>
+    <div style="font-size:14px;color:rgba(255,255,255,.75);margin-top:4px">A deeper context layer for long-term investing, portfolio design, and decision-making under uncertainty.</div>
+  </div>
+  <div class="container">
+    <div class="card card-blue" style="margin-top:0"><strong style="color:#93c5fd">Learning objective.</strong> By the end of this lab, you should be able to distinguish a trading decision from an investing decision, connect return to risk and time horizon, and test how contributions, fees, inflation, and drawdowns change an outcome.</div>
+    <div class="lab-tabs">
+      <button class="lab-tab active" onclick="showLab('context',this)">1. Investment Context</button>
+      <button class="lab-tab" onclick="showLab('growth',this)">2. Growth Simulator</button>
+      <button class="lab-tab" onclick="showLab('stress',this)">3. Stress Test</button>
+      <button class="lab-tab" onclick="showLab('investcalc',this)">4. Investment Calculator</button>
+      <button class="lab-tab" onclick="showLab('portfolio',this)">5. Portfolio Planner</button>
+      <button class="lab-tab" onclick="showLab('decision',this)">6. Decision Simulator</button>
+    </div>
+
+    <section id="lab-context" class="lab-panel active">
+      <div class="section-title">The investor’s operating system</div>
+      <div class="section-sub">Use this framework before choosing an asset, strategy, or account.</div>
+      <div class="context-grid">
+        <div class="context-card"><h4>Time horizon</h4><p>Longer horizons can make short-term volatility easier to absorb, but they do not guarantee a positive outcome. Match the asset mix to when the money is needed.</p></div>
+        <div class="context-card"><h4>Return is a trade-off</h4><p>Expected return is compensation for uncertainty. Ask what could make the thesis wrong, how large a drawdown you can withstand, and whether the position is sized accordingly.</p></div>
+        <div class="context-card"><h4>Diversification</h4><p>Spread exposure across assets, sectors, issuers, and geographies. Diversification reduces concentration risk; it cannot eliminate market risk.</p></div>
+        <div class="context-card"><h4>Compounding</h4><p>Contributions, time, and reinvestment can matter more than finding a perfect entry. Fees and taxes compound too, so keep the full cost visible.</p></div>
+        <div class="context-card"><h4>Behavioral risk</h4><p>A plan that is mathematically efficient but impossible to follow is not a good plan. Define rebalancing rules before a stressful market move.</p></div>
+        <div class="context-card"><h4>Thesis vs. ticker</h4><p>A ticker is not a thesis. State the business or economic exposure, valuation assumptions, risks, position limit, and conditions that would change your mind.</p></div>
+      </div>
+      <div class="card card-gold" style="margin-top:16px"><div style="color:var(--go);font-weight:700;margin-bottom:8px">Deep-dive prompt</div><p style="font-size:14px;color:#fef3c7;line-height:1.75">Imagine you need the money in 18 months, five years, or 25 years. How would the horizon change your liquidity needs, tolerance for drawdown, contribution rate, and rebalancing behavior? Write one sentence for each horizon.</p></div>
+<div class="card section-quiz"><div class="quiz-title">🧠 Investment Context Section Quiz</div><div id="context-quiz"></div></div>
+      <div class="practice"><div class="practice-title">Decision checkpoint</div><div class="practice-text">Before investing, write: “I am taking this exposure because… I can tolerate a temporary decline of… I will review it when… I will not change the plan merely because…”</div></div>
+    </section>
+
+    <section id="lab-growth" class="lab-panel">
+      <div class="section-title">Growth simulator</div><div class="section-sub">Explore how time, contributions, returns, inflation, and fees interact. This is an educational scenario model, not a forecast.</div>
+      <div class="card"><div class="range-row"><label>Starting amount ($)</label><input class="range-value" id="g-start-v" type="number" value="10000" min="0" step="500" oninput="syncGrowth('start',this.value)"></div><input id="g-start" type="range" min="0" max="100000" step="500" value="10000" oninput="syncGrowth('start',this.value)">
+      <div class="range-row"><label>Monthly contribution ($)</label><input class="range-value" id="g-contrib-v" type="number" value="500" min="0" step="25" oninput="syncGrowth('contrib',this.value)"></div><input id="g-contrib" type="range" min="0" max="5000" step="25" value="500" oninput="syncGrowth('contrib',this.value)">
+      <div class="range-row"><label>Years</label><input class="range-value" id="g-years-v" type="number" value="20" min="1" max="50" oninput="syncGrowth('years',this.value)"></div><input id="g-years" type="range" min="1" max="50" value="20" oninput="syncGrowth('years',this.value)">
+      <div class="range-row"><label>Annual nominal return (%)</label><input class="range-value" id="g-return-v" type="number" value="7" min="-20" max="20" step="0.1" oninput="syncGrowth('return',this.value)"></div><input id="g-return" type="range" min="-20" max="20" step="0.1" value="7" oninput="syncGrowth('return',this.value)">
+      <div class="range-row"><label>Annual fee (%)</label><input class="range-value" id="g-fee-v" type="number" value="0.25" min="0" max="3" step="0.05" oninput="syncGrowth('fee',this.value)"></div><input id="g-fee" type="range" min="0" max="3" step="0.05" value="0.25" oninput="syncGrowth('fee',this.value)">
+      <div class="range-row"><label>Inflation (%)</label><input class="range-value" id="g-infl-v" type="number" value="2.5" min="0" max="10" step="0.1" oninput="syncGrowth('infl',this.value)"></div><input id="g-infl" type="range" min="0" max="10" step="0.1" value="2.5" oninput="syncGrowth('infl',this.value)"></div>
+      <div class="grid-3"><div class="stat"><div class="stat-val" id="g-final">$0</div><div class="stat-label">Nominal ending value</div></div><div class="stat"><div class="stat-val" id="g-real" style="color:var(--green)">$0</div><div class="stat-label">Today’s-dollar value</div></div><div class="stat"><div class="stat-val" id="g-fees" style="color:var(--red)">$0</div><div class="stat-label">Estimated fees paid</div></div></div>
+      <div class="chart-wrap"><canvas id="growth-chart" width="720" height="230"></canvas></div>
+<div class="card section-quiz"><div class="quiz-title">🧠 Growth Simulator Section Quiz</div><div id="growth-quiz"></div></div>
+      <div id="growth-note" class="practice"><div class="practice-title">What to notice</div><div class="practice-text"></div></div>
+    </section>
+
+    <section id="lab-stress" class="lab-panel">
+      <div class="section-title">Drawdown and recovery simulator</div><div class="section-sub">A loss requires a larger percentage gain to recover. Test that asymmetry and compare disciplined vs. emotional behavior.</div>
+      <div class="card"><div class="range-row"><label>Portfolio value ($)</label><input class="range-value" id="s-value-v" type="number" value="25000" min="1000" step="500" oninput="syncStress('value',this.value)"></div><input id="s-value" type="range" min="1000" max="100000" step="500" value="25000" oninput="syncStress('value',this.value)">
+      <div class="range-row"><label>Market drawdown (%)</label><input class="range-value" id="s-drop-v" type="number" value="30" min="1" max="80" step="1" oninput="syncStress('drop',this.value)"></div><input id="s-drop" type="range" min="1" max="80" value="30" oninput="syncStress('drop',this.value)">
+      <div class="range-row"><label>Recovery return (%)</label><input class="range-value" id="s-recovery-v" type="number" value="8" min="1" max="30" step="0.5" oninput="syncStress('recovery',this.value)"></div><input id="s-recovery" type="range" min="1" max="30" step="0.5" value="8" oninput="syncStress('recovery',this.value)"></div>
+      <div class="grid-3"><div class="stat"><div class="stat-val negative" id="s-loss">-$0</div><div class="stat-label">Dollar decline</div></div><div class="stat"><div class="stat-val" id="s-rebound">0%</div><div class="stat-label">Gain needed to recover</div></div><div class="stat"><div class="stat-val" id="s-months" style="color:var(--go)">0</div><div class="stat-label">Approx. months at recovery rate</div></div></div>
+      <div id="stress-bars" class="card" style="margin-top:14px"></div><div class="card section-quiz"><div class="quiz-title">🧠 Stress Test Section Quiz</div><div id="stress-quiz"></div></div><div class="practice"><div class="practice-title">Scenario question</div><div class="practice-text">If this drawdown happened, would your plan, cash needs, and position sizes allow you to stay invested? If not, change the plan before the next drawdown—not during it.</div></div>
+    </section>
+
+    <section id="lab-investcalc" class="lab-panel">
+      <div class="section-title">Investment calculator</div><div class="section-sub">Estimate a future value from a starting balance and recurring contributions, then see the effect of inflation and fees.</div>
+      <div class="card"><div class="grid-2"><div><label class="calc-label">Starting balance ($)</label><input class="calc-input" id="i-start" type="number" value="10000" oninput="investmentCalc()"></div><div><label class="calc-label">Monthly contribution ($)</label><input class="calc-input" id="i-monthly" type="number" value="500" oninput="investmentCalc()"></div><div><label class="calc-label">Years</label><input class="calc-input" id="i-years" type="number" value="20" oninput="investmentCalc()"></div><div><label class="calc-label">Expected annual return (%)</label><input class="calc-input" id="i-return" type="number" value="7" step="0.1" oninput="investmentCalc()"></div><div><label class="calc-label">Annual fee (%)</label><input class="calc-input" id="i-fee" type="number" value="0.25" step="0.05" oninput="investmentCalc()"></div><div><label class="calc-label">Inflation (%)</label><input class="calc-input" id="i-infl" type="number" value="2.5" step="0.1" oninput="investmentCalc()"></div></div></div>
+      <div class="grid-3"><div class="calc-result" style="background:#0d2b1e;border:2px solid var(--green)"><div class="calc-result-val positive" id="i-final">$0</div><div class="calc-result-label">Future nominal value</div></div><div class="calc-result" style="background:#0a1628;border:2px solid var(--blue)"><div class="calc-result-val" id="i-real" style="color:var(--blue)">$0</div><div class="calc-result-label">Future value in today’s dollars</div></div><div class="calc-result" style="background:#2d0d0d;border:2px solid var(--red)"><div class="calc-result-val negative" id="i-fees">$0</div><div class="calc-result-label">Approximate fees over period</div></div></div>
+      <table class="sim-table" style="margin-top:18px"><thead><tr><th>Component</th><th>Amount</th><th>Share of ending value</th></tr></thead><tbody id="i-breakdown"></tbody></table>
+<div class="card section-quiz"><div class="quiz-title">🧠 Investment Calculator Section Quiz</div><div id="investcalc-quiz"></div></div>
+      <div class="card card-gold" style="margin-top:16px"><div style="color:var(--go);font-weight:700;margin-bottom:6px">Interpretation</div><div id="i-note" style="font-size:13px;color:#fef3c7;line-height:1.7"></div></div>
+    </section>
+
+    <section id="lab-portfolio" class="lab-panel">
+      <div class="section-title">Portfolio planner and rebalancing tool</div>
+      <div class="section-sub">Start with your ability and willingness to take risk, then compare your current allocation with a target allocation. The output is an educational framework, not individualized financial advice.</div>
+      <div class="card card-gold"><div style="color:var(--go);font-weight:700;margin-bottom:6px">How to use this section</div><div style="font-size:13px;color:#fef3c7;line-height:1.7">Complete the questionnaire without trying to “game” the result. Then enter your current holdings and portfolio value. The rebalancing table shows the dollar difference between current and target weights.</div></div>
+      <div class="section-title" style="font-size:19px">Risk-tolerance questionnaire</div>
+      <form id="risk-form" onsubmit="scoreRisk(event)">
+        <fieldset class="question-card"><legend>1. When your portfolio falls 20% during a broad market decline, what would you most likely do?</legend><label><input type="radio" name="risk1" value="1"> Sell most holdings to stop further losses.</label><label><input type="radio" name="risk1" value="2"> Reduce some risk and wait for clarity.</label><label><input type="radio" name="risk1" value="3"> Hold and review the original plan.</label><label><input type="radio" name="risk1" value="4"> Add gradually if the thesis is unchanged.</label><label><input type="radio" name="risk1" value="5"> Add aggressively because the decline is an opportunity.</label></fieldset>
+        <fieldset class="question-card"><legend>2. When will you need most of the money you are investing?</legend><label><input type="radio" name="risk2" value="1"> Within 1–2 years.</label><label><input type="radio" name="risk2" value="2"> In 3–5 years.</label><label><input type="radio" name="risk2" value="3"> In 6–10 years.</label><label><input type="radio" name="risk2" value="4"> In 11–20 years.</label><label><input type="radio" name="risk2" value="5"> More than 20 years or no defined date.</label></fieldset>
+        <fieldset class="question-card"><legend>3. How stable is your emergency reserve outside the portfolio?</legend><label><input type="radio" name="risk3" value="1"> I have little or no emergency reserve.</label><label><input type="radio" name="risk3" value="2"> I have about one month of expenses.</label><label><input type="radio" name="risk3" value="3"> I have three months of expenses.</label><label><input type="radio" name="risk3" value="4"> I have six months of expenses.</label><label><input type="radio" name="risk3" value="5"> I have six or more months and stable income.</label></fieldset>
+        <fieldset class="question-card"><legend>4. Which outcome matters most to you?</legend><label><input type="radio" name="risk4" value="1"> Avoiding losses, even if growth is modest.</label><label><input type="radio" name="risk4" value="2"> A smoother ride with some growth.</label><label><input type="radio" name="risk4" value="3"> Balanced growth and stability.</label><label><input type="radio" name="risk4" value="4"> Higher long-term growth with noticeable volatility.</label><label><input type="radio" name="risk4" value="5"> Maximizing long-term growth despite substantial drawdowns.</label></fieldset>
+        <button class="btn btn-green" type="submit" style="width:100%">Calculate My Risk Profile</button>
+      </form>
+      <div id="risk-result" class="profile-result"><div style="font-size:12px;color:var(--green);font-weight:700;letter-spacing:1px;text-transform:uppercase">Your learning profile</div><div id="risk-label" style="font-size:24px;font-weight:800;color:#fff;margin:4px 0"></div><div id="risk-copy" style="font-size:13px;color:#a7f3d0;line-height:1.7"></div><div class="meter"><div id="risk-meter" class="meter-fill" style="background:var(--green);width:0%"></div></div><div style="font-size:12px;color:#8a9080;margin-top:8px">Suggested starting mix shown below. Revisit it when your goals, time horizon, or ability to absorb losses changes.</div></div>
+      <div class="section-title" style="font-size:19px;margin-top:22px">Allocation and rebalancing calculator</div>
+      <div class="card"><div class="portfolio-grid"><div><label class="calc-label">Portfolio value ($)</label><input class="calc-input" id="p-value" type="number" value="50000" min="0" oninput="allocationUpdate()"></div><div><label class="calc-label">Rebalance threshold (%)</label><input class="calc-input" id="p-threshold" type="number" value="5" min="0.5" max="25" step="0.5" oninput="allocationUpdate()"></div><div class="full"><div class="alloc-row alloc-head"><span>Asset bucket</span><span>Current %</span><span>Target %</span><span>Action</span></div><div id="allocation-rows"></div><input id="p-stocks" type="hidden" value="55"><input id="p-bonds" type="hidden" value="30"><input id="p-cash" type="hidden" value="10"><input id="p-alternatives" type="hidden" value="5"></div></div></div>
+      <div class="grid-3"><div class="stat"><div class="stat-val" id="p-total">0%</div><div class="stat-label">Current allocation total</div></div><div class="stat"><div class="stat-val" id="p-drift" style="color:var(--blue)">0%</div><div class="stat-label">Largest drift</div></div><div class="stat"><div class="stat-val" id="p-status" style="color:var(--go);font-size:22px">Set profile</div><div class="stat-label">Rebalance status</div></div></div>
+      <div class="allocation-chart"><canvas id="allocation-chart" width="440" height="440"></canvas><div id="allocation-legend" class="chart-legend"></div></div><div class="alloc-tools"><button class="btn btn-green btn-sm" onclick="saveAllocationPlan()">Save Current Plan</button><button class="btn btn-outline btn-sm" onclick="loadLatestPlan()">Load Latest Plan</button><button class="btn btn-dark btn-sm" onclick="resetAllocation()">Reset to Target</button></div><div class="saved-plans"><label class="calc-label" style="margin:0">Saved plans</label><select id="saved-plans-select" onchange="loadSelectedPlan(this.value)"><option value="">No saved plans yet</option></select></div>
+      <div class="practice"><div class="practice-title">Rebalancing lesson</div><div class="practice-text">A rebalance is a rule-based return to target weights, not a prediction about what will outperform next. Consider transaction costs, taxes, account type, and whether new contributions can correct drift before selling.</div></div>
+      <div class="card section-quiz"><div class="quiz-title">🧠 Portfolio Planner Section Quiz</div><div class="quiz-progress">Check your understanding before moving on.</div><div id="portfolio-quiz"></div></div>
+    </section>
+
+    <section id="lab-decision" class="lab-panel"><div class="section-title">Decision simulator</div><div class="section-sub">Explore how contribution discipline, fees, and market regimes can change a long-term plan. The scenarios are deliberately simplified for learning.</div><div class="card card-gold"><div style="color:var(--go);font-weight:700;margin-bottom:6px">Simulation rule</div><div style="font-size:13px;color:#fef3c7;line-height:1.7">The simulator uses a starting balance, monthly contribution, annual fee, and a selected return path. It is not a prediction and should not be used as a promise of performance.</div></div><div class="card"><div class="grid-2"><div><label class="calc-label">Starting balance ($)</label><input class="calc-input" id="d-start" type="number" value="10000" oninput="decisionUpdate()"></div><div><label class="calc-label">Monthly contribution ($)</label><input class="calc-input" id="d-monthly" type="number" value="500" oninput="decisionUpdate()"></div><div><label class="calc-label">Years</label><input class="calc-input" id="d-years" type="number" value="20" oninput="decisionUpdate()"></div><div><label class="calc-label">Annual fee (%)</label><input class="calc-input" id="d-fee" type="number" value="0.25" step="0.05" oninput="decisionUpdate()"></div></div></div><div class="scenario-grid"><div class="scenario-card active" id="scenario-base"><h4>Base path</h4><p>Moderate 7% annual return assumption with normal contributions.</p><button class="btn btn-outline btn-sm" onclick="setScenario('base')">Use base path</button></div><div class="scenario-card" id="scenario-bear"><h4>Bear path</h4><p>Three down years early, followed by a slower 5% recovery path.</p><button class="btn btn-outline btn-sm" onclick="setScenario('bear')">Use bear path</button></div><div class="scenario-card" id="scenario-fee"><h4>Fee drag</h4><p>Compare the same path with a 1.50% annual fee instead of 0.25%.</p><button class="btn btn-outline btn-sm" onclick="setScenario('fee')">Use fee path</button></div></div><div class="scenario-output"><div class="stat"><div class="stat-val" id="d-final">$0</div><div class="stat-label">Ending value</div></div><div class="stat"><div class="stat-val" id="d-contrib" style="color:var(--blue)">$0</div><div class="stat-label">Contributed</div></div><div class="stat"><div class="stat-val" id="d-growth" style="color:var(--green)">$0</div><div class="stat-label">Growth after fees</div></div><div class="stat"><div class="stat-val" id="d-fees" style="color:var(--red)">$0</div><div class="stat-label">Fee drag</div></div></div><div class="chart-wrap"><canvas id="decision-chart" width="720" height="230"></canvas></div><div class="card section-quiz"><div class="quiz-title">🧠 Decision Simulator Section Quiz</div><div id="decision-quiz"></div></div><div class="practice"><div class="practice-title">Reflection prompt</div><div class="practice-text">Which assumption changes the output most: contribution rate, return path, or fee? Write a one-sentence rule for what you can control and what you cannot control.</div></div></section>
   </div>
 </div>
 
@@ -702,10 +828,8 @@ function renderLessons(weekKey, containerId) {
       html += '</div>';
     }
 
-    // Quiz (interactive multiple-choice — only renders if lesson.quiz is set)
-    if(lesson.quiz) {
-      html += renderQuizHTML(lesson.id, lesson.quiz);
-    }
+    // Every lesson gets a multiple-choice checkpoint. Existing authored quizzes are preserved; missing quizzes are generated from the lesson points and exercise.
+    html += renderQuizHTML(lesson.id, getLessonQuiz(lesson));
 
     // Complete Button
     html += '<button onclick="toggleComplete('+lesson.id+')" id="cbtn-'+lesson.id+'" style="width:100%;padding:14px;border-radius:12px;font-size:15px;font-weight:700;color:#fff;background:'+(done?'#374151':'var(--g)')+'">';
@@ -730,6 +854,7 @@ function renderQuizHTML(lessonId, quiz) {
   var savedScore = quizScores[lessonId];
   var html = '<div class="quiz-box" id="quiz-'+lessonId+'">';
   html += '<div class="quiz-title">🧠 Knowledge Check' + (savedScore !== undefined ? ' — last score: '+savedScore+'/'+quiz.length : '') + '</div>';
+  html += '<div class="quiz-progress">'+quiz.length+' questions · Review the explanations after submitting.</div>';
   quiz.forEach(function(q, qi) {
     html += '<div class="quiz-q" id="quiz-'+lessonId+'-q'+qi+'">';
     html += '<div class="quiz-q-text">'+(qi+1)+'. '+q.q+'</div>';
@@ -755,10 +880,11 @@ function checkQuiz(lessonId) {
     if(found) { lesson = found; return true; }
     return false;
   });
-  if(!lesson || !lesson.quiz) return;
+  if(!lesson) return;
+  var activeQuiz = getLessonQuiz(lesson);
 
   var correctCount = 0;
-  lesson.quiz.forEach(function(q, qi) {
+  activeQuiz.forEach(function(q, qi) {
     var selected = document.querySelector('input[name="quiz-'+lessonId+'-q'+qi+'"]:checked');
     var explainEl = document.getElementById('quiz-'+lessonId+'-q'+qi+'-explain');
     q.options.forEach(function(opt, oi) {
@@ -773,12 +899,13 @@ function checkQuiz(lessonId) {
 
   quizScores[lessonId] = correctCount;
   saveState('quizScores', quizScores);
+  renderQuizStats();
 
   var scoreEl = document.getElementById('quiz-'+lessonId+'-score');
   if(scoreEl) {
     scoreEl.textContent = correctCount === lesson.quiz.length
-      ? '🎉 Perfect score: '+correctCount+'/'+lesson.quiz.length
-      : correctCount+'/'+lesson.quiz.length+' correct — review the highlighted explanations above and try again anytime.';
+      ? '🎉 Perfect score: '+correctCount+'/'+activeQuiz.length
+      : correctCount+'/'+activeQuiz.length+' correct — review the highlighted explanations above and try again anytime.';
     scoreEl.classList.add('show');
   }
 }
@@ -993,6 +1120,98 @@ function toggleGoLive(idx) {
   renderGoLive();
 }
 
+
+// ── INVESTING LAB ──────────────────────────────────────────────
+function showLab(id, btn){
+  document.querySelectorAll('.lab-panel').forEach(function(p){p.classList.remove('active');});
+  document.querySelectorAll('.lab-tab').forEach(function(t){t.classList.remove('active');});
+  var panel=document.getElementById('lab-'+id); if(panel) panel.classList.add('active');
+  if(btn) btn.classList.add('active');
+  if(id==='growth') growthUpdate();
+  if(id==='stress') stressUpdate();
+  if(id==='investcalc') investmentCalc();
+  if(id==='portfolio'){renderRiskResult();allocationUpdate();renderSavedPlans();}
+  if(id==='decision') decisionUpdate();
+}
+function money(n){return '$'+Math.round(n).toLocaleString();}
+function val(id){var n=parseFloat(document.getElementById(id).value);return isFinite(n)?n:0;}
+function syncGrowth(kind,v){
+  var ids={start:'g-start',contrib:'g-contrib',years:'g-years',return:'g-return',fee:'g-fee',infl:'g-infl'};
+  var id=ids[kind]; document.getElementById(id).value=v; document.getElementById(id+'-v').value=v; growthUpdate();
+}
+function growthModel(){
+  var start=val('g-start'), monthly=val('g-contrib'), years=val('g-years'), ret=val('g-return')/100, fee=val('g-fee')/100, infl=val('g-infl')/100;
+  var net=(1+ret)**(1/12)-1, balance=start, contributed=start, feeTotal=0, points=[];
+  for(var m=1;m<=years*12;m++){var before=balance; balance=balance*(1+net)+monthly; feeTotal+=Math.max(0,before)*fee/12; balance-=Math.max(0,before)*fee/12; contributed+=monthly;if(m%12===0)points.push(balance);}
+  return {start:start,monthly:monthly,years:years,ret:ret,fee:fee,infl:infl,final:balance,contributed:contributed,fees:feeTotal,real:balance/((1+infl)**years),points:points};
+}
+function growthUpdate(){
+  var o=growthModel();
+  ['g-final','g-real','g-fees'].forEach(function(id){var e=document.getElementById(id);if(e)e.textContent=money(id==='g-final'?o.final:id==='g-real'?o.real:o.fees);});
+  var note=document.querySelector('#growth-note .practice-text'); if(note) note.textContent='You contributed '+money(o.contributed)+' over '+o.years+' years. The gap between contributions and ending value is the modelled growth; the fee number shows why small annual costs can matter over long horizons.';
+  drawGrowth(o.points,o.contributed,o.years);
+}
+function drawGrowth(points,contributed,years){var c=document.getElementById('growth-chart');if(!c||!c.getContext)return;var x=c.getContext('2d'),w=c.width,h=c.height;x.clearRect(0,0,w,h);x.strokeStyle='#2d4a35';x.lineWidth=1;for(var i=1;i<5;i++){x.beginPath();x.moveTo(0,i*h/5);x.lineTo(w,i*h/5);x.stroke();}var max=Math.max.apply(null,points.concat([1]));x.beginPath();points.forEach(function(v,i){var px=i*(w-24)/Math.max(1,points.length-1)+12,py=h-16-(v/max)*(h-32);i?x.lineTo(px,py):x.moveTo(px,py);});x.strokeStyle='#10b981';x.lineWidth=3;x.stroke();x.fillStyle='#8a9080';x.font='12px sans-serif';x.fillText('Year 1',12,h-2);x.fillText('Year '+years,w-64,h-2);}
+function syncStress(kind,v){var id={value:'s-value',drop:'s-drop',recovery:'s-recovery'}[kind];document.getElementById(id).value=v;document.getElementById(id+'-v').value=v;stressUpdate();}
+function stressUpdate(){var v=val('s-value'),drop=val('s-drop')/100,recover=val('s-recovery')/100,loss=v*drop,rebound=drop/(1-drop),months=Math.ceil(Math.log(1/(1-drop))/Math.log(1+recover/12));document.getElementById('s-loss').textContent='-'+money(loss);document.getElementById('s-rebound').textContent=Math.round(rebound*100)+'%';document.getElementById('s-months').textContent=months;document.getElementById('stress-bars').innerHTML='<div style="display:flex;justify-content:space-between;font-size:13px;color:#8a9080"><span>Starting value</span><strong style="color:var(--green)">'+money(v)+'</strong></div><div class="meter"><div class="meter-fill" style="width:100%;background:var(--green)"></div></div><div style="display:flex;justify-content:space-between;font-size:13px;color:#8a9080;margin-top:12px"><span>After '+Math.round(drop*100)+'% drawdown</span><strong class="negative">'+money(v-loss)+'</strong></div><div class="meter"><div class="meter-fill" style="width:'+(1-drop)*100+'%;background:var(--red)"></div></div><div style="font-size:12px;color:#cbd5d1;margin-top:14px;line-height:1.7">A '+Math.round(drop*100)+'% loss requires a '+Math.round(rebound*100)+'% gain to return to the starting value. This is why position sizing and liquidity matter before volatility arrives.</div>'}
+function investmentCalc(){var s=val('i-start'),m=val('i-monthly'),y=Math.max(1,val('i-years')),r=val('i-return')/100,f=val('i-fee')/100,inf=val('i-infl')/100,rate=(1+r)**(1/12)-1,feeRate=(1+r-f)**(1/12)-1,b=s,fees=0;for(var i=0;i<y*12;i++){var before=b;b=b*(1+feeRate)+m;fees+=Math.max(0,before)*Math.max(0,f)/12;}var contrib=s+m*y*12,real=b/((1+inf)**y),growth=Math.max(0,b-contrib);document.getElementById('i-final').textContent=money(b);document.getElementById('i-real').textContent=money(real);document.getElementById('i-fees').textContent=money(fees);document.getElementById('i-breakdown').innerHTML='<tr><td>Starting balance + contributions</td><td>'+money(contrib)+'</td><td>'+Math.round(contrib/b*100)+'%</td></tr><tr><td>Modelled investment growth</td><td class="positive">'+money(growth)+'</td><td>'+Math.round(growth/b*100)+'%</td></tr><tr><td>Estimated fee drag</td><td class="negative">-'+money(fees)+'</td><td>'+Math.round(fees/Math.max(1,b)*100)+'%</td></tr>';document.getElementById('i-note').textContent='At this assumed return, the ending value is '+money(b)+' nominally, but inflation reduces its purchasing power to roughly '+money(real)+' in today’s dollars. Change one input at a time and observe which assumption drives the result.';}
+
+
+// ── UNIVERSAL SECTION QUIZZES ─────────────────────────────────
+function getLessonQuiz(lesson){
+  if(lesson.quiz) return lesson.quiz;
+  var p0=lesson.points && lesson.points[0] ? lesson.points[0] : 'Follow the lesson framework and document your decision.';
+  var p1=lesson.points && lesson.points[1] ? lesson.points[1] : p0;
+  var practice=lesson.practice || 'Complete the practice exercise and record what you learned.';
+  return [
+    {q:'Which statement best matches the lesson?',options:[p0,'Ignore the lesson until after using real money.','Use a larger position whenever you feel uncertain.','Treat every market as identical.'],correct:0,explain:'This answer is taken directly from the lesson\'s first key point.'},
+    {q:'What is the most appropriate next step after studying this section?',options:[practice,'Skip practice and rely on memory.','Change several variables at once without recording results.','Make a live trade immediately.'],correct:0,explain:'The practice exercise turns the concept into a testable behavior before real-money decisions.'},
+    {q:'Which additional principle is emphasized in this lesson?',options:[p1,'A single indicator guarantees a profitable outcome.','Risk can be ignored when a setup looks attractive.','Past performance guarantees future returns.'],correct:0,explain:'This answer reflects another key point from the section.'}
+  ];
+}
+
+function renderSectionQuiz(targetId, quizId, title, questions){
+  var target=document.getElementById(targetId); if(!target) return;
+  target.innerHTML=renderQuizHTML(quizId,questions);
+}
+
+// ── RISK PROFILE AND PORTFOLIO PLANNER ────────────────────────
+var riskProfile=loadState('riskProfile',null);
+var allocationTargets={conservative:{stocks:35,bonds:45,cash:15,alternatives:5},moderate:{stocks:55,bonds:30,cash:10,alternatives:5},growth:{stocks:70,bonds:20,cash:5,alternatives:5},aggressive:{stocks:85,bonds:10,cash:0,alternatives:5}};
+var allocationLabels={stocks:'Stocks / equity',bonds:'Bonds / fixed income',cash:'Cash / short-term',alternatives:'Alternatives / other'};
+function scoreRisk(event){
+  if(event) event.preventDefault();
+  var total=0,answered=0;['risk1','risk2','risk3','risk4'].forEach(function(name){var selected=document.querySelector('input[name="'+name+'"]:checked');if(selected){total+=parseInt(selected.value,10);answered++;}});
+  if(answered<4){alert('Please answer all four questions before calculating your profile.');return;}
+  var profile=total<=8?'conservative':total<=12?'moderate':total<=16?'growth':'aggressive';
+  riskProfile={profile:profile,total:total,date:new Date().toISOString()};saveState('riskProfile',riskProfile);renderRiskResult();allocationUpdate();
+}
+function renderRiskResult(){if(!riskProfile)return;var labels={conservative:'Conservative learner',moderate:'Moderate learner',growth:'Growth-oriented learner',aggressive:'Aggressive-growth learner'};var copy={conservative:'You place a high value on stability and liquidity. Study how inflation and purchasing power interact with a lower-volatility mix.',moderate:'You appear comfortable with a balanced trade-off between growth and stability. Focus on contribution discipline and periodic rebalancing.',growth:'You accept meaningful volatility in exchange for higher long-term growth potential. Study drawdowns, diversification, and behavior under stress.',aggressive:'You indicate a high tolerance for volatility and a long horizon. High tolerance is not the same as unlimited capacity to lose; keep liquidity and position limits explicit.'};var result=document.getElementById('risk-result');if(!result)return;result.classList.add('show');document.getElementById('risk-label').textContent=labels[riskProfile.profile];document.getElementById('risk-copy').textContent=copy[riskProfile.profile];document.getElementById('risk-meter').style.width=Math.round(riskProfile.total/20*100)+'%';}
+function allocationUpdate(){var profile=riskProfile?riskProfile.profile:'moderate',targets=allocationTargets[profile],value=val('p-value'),threshold=val('p-threshold')/100;var current={stocks:val('p-stocks'),bonds:val('p-bonds'),cash:val('p-cash'),alternatives:val('p-alternatives')};var total=Object.keys(current).reduce(function(s,k){return s+current[k];},0),largest=0,html='';Object.keys(current).forEach(function(k){var drift=current[k]-targets[k],abs=Math.abs(drift);largest=Math.max(largest,abs);var dollars=(targets[k]-current[k])/100*value;var action=Math.abs(dollars)<1?'On target':(dollars>0?'Buy / add '+money(Math.abs(dollars)):'Trim / redirect '+money(Math.abs(dollars)));html+='<div class="alloc-row"><span>'+allocationLabels[k]+'</span><input class="alloc-input" id="p-'+k+'" type="number" min="0" max="100" step="1" value="'+current[k]+'" oninput="allocationUpdate()"><span>'+targets[k]+'%</span><span class="'+(abs>threshold*100?'drift-pill drift-warn':'drift-pill drift-ok')+'">'+action+'</span></div>';});var rows=document.getElementById('allocation-rows');if(rows)rows.innerHTML=html;var totalEl=document.getElementById('p-total');if(totalEl)totalEl.textContent=Math.round(total)+'%';var driftEl=document.getElementById('p-drift');if(driftEl)driftEl.textContent=Math.round(largest)+'%';var status=document.getElementById('p-status');if(status){status.textContent=total!==100?'Fix total':largest>threshold*100?'Rebalance':'Within range';status.style.color=total!==100?'var(--red)':largest>threshold*100?'var(--red)':'var(--green)';}drawAllocationChart();}
+function renderPortfolioQuiz(){var questions=[{q:'What is the primary purpose of rebalancing?',options:['Return the portfolio to its target weights using a rule-based process.','Predict which asset will outperform next.','Guarantee that the portfolio cannot lose money.','Replace an emergency reserve.'],correct:0,explain:'Rebalancing is a discipline for managing drift, not a market-timing guarantee.'},{q:'Which factor should be considered before selling to rebalance?',options:['Transaction costs, taxes, account type, and whether contributions can correct drift.','Only the recent price chart.','Whether a friend likes the asset.','The desire to trade more often.'],correct:0,explain:'Implementation details can materially change the cost and practicality of rebalancing.'},{q:'What is the best first use of a risk questionnaire?',options:['To start a structured conversation about time horizon, capacity, and willingness to take risk.','To guarantee a personalized return.','To remove the need for diversification.','To determine tomorrow’s winning ticker.'],correct:0,explain:'A questionnaire is a learning and planning input, not a forecast or guarantee.'}];renderSectionQuiz('portfolio-quiz',9050,'Portfolio Planner Section Quiz',questions);var decision=[{q:'Which assumption is most directly under the investor’s control?',options:['Contribution rate and the cost of the chosen implementation.','The market’s next annual return.','Whether a recession occurs.','The exact date of the next peak.'],correct:0,explain:'Investors can control behavior, savings, costs, and diversification—not future market outcomes.'}];renderSectionQuiz('decision-quiz',9051,'Decision Simulator Section Quiz',decision);}
+function renderLabQuizzes(){var context=[{q:'Which statement best describes diversification?',options:['It can reduce concentration risk but cannot eliminate market risk.','It guarantees positive returns.','It means owning only one sector.','It removes the need for a plan.'],correct:0,explain:'Diversification spreads exposures; it does not eliminate broad market risk.'}];var growth=[{q:'Which input most directly reduces purchasing power in the growth simulator?',options:['Inflation.','The chart width.','The number of quiz questions.','The page color.'],correct:0,explain:'Inflation is used to translate nominal future value into today’s-dollar value.'}];var stress=[{q:'Why does a 30% loss require more than a 30% gain to recover?',options:['The percentage gain is applied to a smaller remaining base.','Losses are always taxed twice.','The market cannot recover.','The calculator assumes zero contributions.'],correct:0,explain:'After a loss, the remaining portfolio is smaller, so the recovery percentage must be larger.'}];var calc=[{q:'What does the investment calculator’s real value represent?',options:['An estimate adjusted for inflation into today’s purchasing power.','A guaranteed withdrawal amount.','A tax filing result.','The portfolio’s intraday price.'],correct:0,explain:'Real value is a purchasing-power lens, not a guarantee or tax calculation.'}];renderSectionQuiz('context-quiz',9001,'Context',context);renderSectionQuiz('growth-quiz',9002,'Growth',growth);renderSectionQuiz('stress-quiz',9003,'Stress',stress);renderSectionQuiz('investcalc-quiz',9004,'Calculator',calc);renderPortfolioQuiz();}
+
+
+// ── QUIZ ANALYTICS ────────────────────────────────────────────
+function renderQuizStats(){var total=0,scored=0,points=0;Object.keys(quizScores).forEach(function(k){total++;scored+=quizScores[k];var lesson=null;Object.keys(curriculum).some(function(w){lesson=curriculum[w].find(function(l){return String(l.id)===String(k);});return !!lesson;});points+=lesson?getLessonQuiz(lesson).length:0;});var allLessons=Object.keys(curriculum).reduce(function(s,w){return s+curriculum[w].length;},0);var bar=document.getElementById('quiz-progress-bar');var txt=document.getElementById('quiz-progress-text');var avg=document.getElementById('quiz-average');if(bar)bar.style.width=Math.round(total/Math.max(1,allLessons)*100)+'%';if(txt)txt.textContent=total+' / '+allLessons+' scored';if(avg)avg.textContent=(points?Math.round(scored/points*100):0)+'% average';}
+
+// ── PORTFOLIO CHARTS AND SAVED PLANS ──────────────────────────
+var allocationColors={stocks:'#10b981',bonds:'#3b82f6',cash:'#d4a017',alternatives:'#7c3aed'};
+function drawAllocationChart(){var c=document.getElementById('allocation-chart');if(!c||!c.getContext)return;var ctx=c.getContext('2d'),w=c.width,h=c.height;ctx.clearRect(0,0,w,h);var keys=['stocks','bonds','cash','alternatives'],current=keys.map(function(k){return Math.max(0,val('p-'+k));}),total=current.reduce(function(a,b){return a+b;},0)||1,start=-Math.PI/2;keys.forEach(function(k,i){var slice=current[i]/total*Math.PI*2;ctx.beginPath();ctx.moveTo(w/2,h/2);ctx.arc(w/2,h/2,170,start,start+slice);ctx.closePath();ctx.fillStyle=allocationColors[k];ctx.fill();start+=slice;});ctx.beginPath();ctx.arc(w/2,h/2,92,0,Math.PI*2);ctx.fillStyle='#16241D';ctx.fill();ctx.fillStyle='#fff';ctx.font='700 24px sans-serif';ctx.textAlign='center';ctx.fillText(Math.round(total)+'%',w/2,h/2+8);ctx.font='12px sans-serif';ctx.fillStyle='#8a9080';ctx.fillText('current',w/2,h/2+28);var legend=document.getElementById('allocation-legend');if(legend)legend.innerHTML=keys.map(function(k){return '<div class="legend-row"><span><i class="legend-dot" style="background:'+allocationColors[k]+'"></i>'+allocationLabels[k]+'</span><strong>'+current[keys.indexOf(k)]+'%</strong></div>';}).join('');}
+function allocationSnapshot(){return {date:new Date().toISOString(),value:val('p-value'),threshold:val('p-threshold'),profile:riskProfile?riskProfile.profile:'moderate',weights:{stocks:val('p-stocks'),bonds:val('p-bonds'),cash:val('p-cash'),alternatives:val('p-alternatives')}};}
+function saveAllocationPlan(){var plans=loadState('savedPlans',[]);plans.unshift(allocationSnapshot());saveState('savedPlans',plans.slice(0,8));renderSavedPlans();alert('Portfolio plan saved locally in this browser.');}
+function renderSavedPlans(){var select=document.getElementById('saved-plans-select');if(!select)return;var plans=loadState('savedPlans',[]);select.innerHTML=plans.length?'<option value="">Select a saved plan</option>'+plans.map(function(p,i){return '<option value="'+i+'">'+new Date(p.date).toLocaleDateString()+' · '+(p.profile||'moderate')+' · '+money(p.value)+'</option>';}).join(''):'<option value="">No saved plans yet</option>';}
+function applyPlan(p){if(!p)return;document.getElementById('p-value').value=p.value;document.getElementById('p-threshold').value=p.threshold;Object.keys(p.weights).forEach(function(k){var e=document.getElementById('p-'+k);if(e)e.value=p.weights[k];});allocationUpdate();}
+function loadSelectedPlan(i){if(i==='')return;var plans=loadState('savedPlans',[]);applyPlan(plans[parseInt(i,10)]);}
+function loadLatestPlan(){var plans=loadState('savedPlans',[]);if(plans.length)applyPlan(plans[0]);else alert('No saved portfolio plans yet.');}
+function resetAllocation(){var profile=riskProfile?riskProfile.profile:'moderate',target=allocationTargets[profile];Object.keys(target).forEach(function(k){var e=document.getElementById('p-'+k);if(e)e.value=target[k];});allocationUpdate();}
+
+// ── DECISION SIMULATOR ────────────────────────────────────────
+var decisionScenario='base';
+function setScenario(s){decisionScenario=s;document.querySelectorAll('.scenario-card').forEach(function(e){e.classList.remove('active');});var el=document.getElementById('scenario-'+s);if(el)el.classList.add('active');decisionUpdate();}
+function decisionUpdate(){var start=val('d-start'),monthly=val('d-monthly'),years=Math.max(1,val('d-years')),fee=val('d-fee')/100,balances=[start],b=start,contributed=start,fees=0;for(var m=1;m<=years*12;m++){var annual=decisionScenario==='bear'?(m<=36?-0.08:0.05):0.07;var effective=decisionScenario==='fee'?Math.max(0,annual-fee):annual;var before=b;b=b*(1+effective/12)+monthly;fees+=Math.max(0,before)*fee/12;contributed+=monthly;if(m%12===0)balances.push(b);}var final=b,growth=final-contributed;document.getElementById('d-final').textContent=money(final);document.getElementById('d-contrib').textContent=money(contributed);document.getElementById('d-growth').textContent=money(growth);document.getElementById('d-fees').textContent=money(fees);drawDecisionChart(balances,years);}
+function drawDecisionChart(points,years){var c=document.getElementById('decision-chart');if(!c||!c.getContext)return;var ctx=c.getContext('2d'),w=c.width,h=c.height;ctx.clearRect(0,0,w,h);var max=Math.max.apply(null,points.concat([1]));ctx.strokeStyle='#2d4a35';for(var i=1;i<5;i++){ctx.beginPath();ctx.moveTo(0,i*h/5);ctx.lineTo(w,i*h/5);ctx.stroke();}ctx.beginPath();points.forEach(function(v,i){var px=12+i*(w-24)/Math.max(1,points.length-1),py=h-16-(v/max)*(h-32);i?ctx.lineTo(px,py):ctx.moveTo(px,py);});ctx.strokeStyle=decisionScenario==='bear'?'#fca5a5':decisionScenario==='fee'?'#d4a017':'#10b981';ctx.lineWidth=3;ctx.stroke();ctx.fillStyle='#8a9080';ctx.font='12px sans-serif';ctx.fillText('Year 0',12,h-2);ctx.fillText('Year '+years,w-64,h-2);}
+
 // ── INIT ──────────────────────────────────────────────────────
 window.addEventListener('load', function(){
   // Set today's date in journal
@@ -1009,8 +1228,17 @@ window.addEventListener('load', function(){
   // Render go-live checklist
   renderGoLive();
 
-  // Initialize calculator
+  // Initialize calculators
   calcUpdate();
+  growthUpdate();
+  stressUpdate();
+  investmentCalc();
+  renderRiskResult();
+  renderLabQuizzes();
+  allocationUpdate();
+  renderSavedPlans();
+  decisionUpdate();
+  renderQuizStats();
 
   // Initialize journal
   renderJournal();
